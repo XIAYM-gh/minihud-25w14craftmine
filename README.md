@@ -7,7 +7,8 @@ For more information and the downloads (compiled builds), see http://minecraft.c
 
 Compiling
 =========
-* Clone the repository
+* First, you need to build [malilib-25w14craftmine](https://github.com/XIAYM-gh/malilib-25w14craftmine) and publish it to maven local repository
+* Then, clone the repository
 * Open a command prompt/terminal to the repository directory
 * run 'gradlew build' (or try '.\gradlew build' if this fails with Powershell)
 * The built jar file will be in build/libs/

@@ -11,7 +11,7 @@ public class ServerListener implements IServerListener
     @Override
     public void onServerStarted(MinecraftServer server)
     {
-        HudDataManager.getInstance().checkWorldSeed(server);
+        HudDataManager.getInstance().checkWorldSeed();
     }
 
     @Override

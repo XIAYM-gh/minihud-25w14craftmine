@@ -3,6 +3,8 @@ package fi.dy.masa.minihud.renderer;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Nullable;
+
+import fi.dy.masa.malilib.MaLiLib;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.mojang.blaze3d.buffers.BufferUsage;
@@ -429,7 +431,7 @@ public class OverlayRendererSpawnChunks extends OverlayRendererBase implements A
     {
         if (server != null)
         {
-            return server.getOverworld().getGameRules().getInt(GameRules.SPAWN_CHUNK_RADIUS);
+            return MaLiLib.GAME_INSTANCE.getOverworld().getGameRules().getInt(GameRules.SPAWN_CHUNK_RADIUS);
         }
         else if (HudDataManager.getInstance().isSpawnChunkRadiusKnown())
         {

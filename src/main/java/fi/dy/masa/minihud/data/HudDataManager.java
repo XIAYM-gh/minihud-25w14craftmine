@@ -3,6 +3,7 @@ package fi.dy.masa.minihud.data;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.mojang.datafixers.util.Pair;
+import fi.dy.masa.malilib.MaLiLib;
 import fi.dy.masa.malilib.config.options.ConfigBoolean;
 import fi.dy.masa.malilib.gui.GuiBase;
 import fi.dy.masa.malilib.network.ClientPlayHandler;
@@ -271,7 +272,7 @@ public class HudDataManager
         {
             MinecraftServer server = this.mc.getServer();
             assert server != null;
-            World worldTmp = server.getWorld(world.getRegistryKey());
+            World worldTmp = MaLiLib.GAME_INSTANCE.getWorld(world.getRegistryKey());
             return worldTmp != null;
         }
 
@@ -291,7 +292,7 @@ public class HudDataManager
         {
             MinecraftServer server = this.mc.getServer();
             assert server != null;
-            ServerWorld worldTmp = server.getWorld(world.getRegistryKey());
+            ServerWorld worldTmp = MaLiLib.GAME_INSTANCE.getWorld(world.getRegistryKey());
 
             if (worldTmp != null)
             {
@@ -308,13 +309,12 @@ public class HudDataManager
      * But if we own the Server, use this value as valid, overriding the value from the JSON file.
      * This is because your default "New World" .json files' seed tends to eventually get stale
      * without using the /seed command continuously, or deleting the json files.
-     * @param server (Server Object to get the data from)
      */
-    public void checkWorldSeed(MinecraftServer server)
+    public void checkWorldSeed()
     {
         if (this.mc.isIntegratedServerRunning())
         {
-            ServerWorld worldTmp = server.getOverworld();
+            ServerWorld worldTmp = MaLiLib.GAME_INSTANCE.getOverworld();
 
             if (worldTmp != null)
             {
@@ -426,7 +426,7 @@ public class HudDataManager
     {
         if (DataStorage.getInstance().hasIntegratedServer() && mc.getServer() != null)
         {
-            return mc.getServer().getRecipeManager();
+            return MaLiLib.GAME_INSTANCE.getRecipeManager();
         }
         else if (mc.world != null)
         {

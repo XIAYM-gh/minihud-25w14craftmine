@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import fi.dy.masa.malilib.MaLiLib;
 import fi.dy.masa.minihud.Reference;
 import fi.dy.masa.minihud.info.InfoLine;
 
@@ -1737,7 +1738,7 @@ public class RenderHandler implements IRenderer
 
         if (server != null)
         {
-            ServerWorld world = server.getWorld(this.mc.world.getRegistryKey());
+            ServerWorld world = MaLiLib.GAME_INSTANCE.getWorld(this.mc.world.getRegistryKey());
 
             if (world != null)
             {

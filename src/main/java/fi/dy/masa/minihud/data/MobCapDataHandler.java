@@ -2,6 +2,8 @@ package fi.dy.masa.minihud.data;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import fi.dy.masa.malilib.MaLiLib;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 
 import net.minecraft.client.MinecraftClient;
@@ -142,7 +144,7 @@ public class MobCapDataHandler
             }
 
             server.execute(() -> {
-                ServerWorld world = server.getWorld(dim);
+                ServerWorld world = MaLiLib.GAME_INSTANCE.getWorld(dim);
 
                 if (world != null)
                 {

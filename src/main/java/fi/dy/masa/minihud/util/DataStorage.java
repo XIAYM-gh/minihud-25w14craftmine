@@ -14,6 +14,7 @@ import com.google.common.collect.Queues;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.gson.JsonObject;
 
+import fi.dy.masa.malilib.MaLiLib;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.NbtCompound;
@@ -861,7 +862,7 @@ public class DataStorage
         if (this.mc.player == null || this.mc.getServer() == null) return;
 
         final RegistryKey<World> worldId = this.mc.player.getEntityWorld().getRegistryKey();
-        final ServerWorld world = this.mc.getServer().getWorld(worldId);
+        final ServerWorld world = MaLiLib.GAME_INSTANCE.getWorld(worldId);
 
         if (world != null)
         {
