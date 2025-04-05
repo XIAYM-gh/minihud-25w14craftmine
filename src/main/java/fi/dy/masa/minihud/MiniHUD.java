@@ -9,6 +9,7 @@ import fi.dy.masa.minihud.config.Configs;
 public class MiniHUD implements ModInitializer
 {
     public static final Logger LOGGER = LogManager.getLogger(Reference.MOD_ID);
+    public static int deltaPosY = 0;
 
     @Override
     public void onInitialize()

@@ -21,10 +21,7 @@ import fi.dy.masa.minihud.MiniHUD;
 import fi.dy.masa.minihud.Reference;
 import fi.dy.masa.minihud.renderer.OverlayRendererLightLevel;
 import fi.dy.masa.minihud.renderer.OverlayRendererStructures;
-import fi.dy.masa.minihud.util.BlockGridMode;
-import fi.dy.masa.minihud.util.LightLevelMarkerMode;
-import fi.dy.masa.minihud.util.LightLevelNumberMode;
-import fi.dy.masa.minihud.util.LightLevelRenderCondition;
+import fi.dy.masa.minihud.util.*;
 
 public class Configs implements IConfigHandler
 {
@@ -127,6 +124,9 @@ public class Configs implements IConfigHandler
         public static final ConfigBoolean       SPAWN_REAL_REDSTONE_OVERLAY_ENABLED = new ConfigBoolean("spawnRealRedstoneOverlayEnabled", false).apply(GENERIC_KEY);
         public static final ConfigInteger       SPAWNABLE_COLUMNS_OVERLAY_RADIUS    = new ConfigInteger("spawnableColumnHeightsOverlayRadius", 40, 0, 128).apply(GENERIC_KEY);
         public static final ConfigBoolean       STRUCTURES_RENDER_THROUGH           = new ConfigBoolean("structuresRenderThrough", false).apply(GENERIC_KEY);
+        // 25w14a start
+        public static final ConfigOptionList    VANILLA_WORLD_EFFECT_MODE           = new ConfigOptionList("vanillaWorldEffectMode", VanillaWorldEffectMode.MOVE_BENEATH).apply(GENERIC_KEY);
+        // 25w14a end
         public static final ConfigInteger       TEXT_POS_X                          = new ConfigInteger("textPosX", 4, 0, 8192).apply(GENERIC_KEY);
         public static final ConfigInteger       TEXT_POS_Y                          = new ConfigInteger("textPosY", 4, 0, 8192).apply(GENERIC_KEY);
         public static final ConfigInteger       TIME_DAY_DIVISOR                    = new ConfigInteger("timeDayDivisor", 24000, 1, Integer.MAX_VALUE).apply(GENERIC_KEY);
@@ -238,6 +238,7 @@ public class Configs implements IConfigHandler
                 MAP_PREVIEW_SIZE,
                 SLIME_CHUNK_OVERLAY_RADIUS,
                 SPAWNABLE_COLUMNS_OVERLAY_RADIUS,
+                VANILLA_WORLD_EFFECT_MODE,
                 TEXT_POS_X,
                 TEXT_POS_Y,
                 TIME_DAY_DIVISOR,

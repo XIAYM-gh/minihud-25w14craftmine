@@ -1011,5 +1011,9 @@
     "minihud.message.toggled_using_center_position": "已切换 %s %s，使用中心坐标 %s",
     "minihud.message.toggled_using_player_spawn": "已切换 %s %s，模拟距离 %s",
     "minihud.message.toggled_using_position": "已切换 %s %s，使用坐标 %s",
-    "minihud.message.toggled_using_world_spawn": "已切换 %s %s，世界出生点 %s"
+    "minihud.message.toggled_using_world_spawn": "已切换 %s %s，世界出生点 %s",
+    "minihud.config.generic.comment.vanillaWorldEffectMode": "决定当原版世界效果显示时，MiniHUD 该干什么。（当且仅当对齐模式为左上时生效）\n默认：将 MiniHUD 移到下面。",
+    "minihud.config.generic.name.vanillaWorldEffectMode": "原版世界效果模式",
+    "minihud.label.vanilla_world_effect_mode.move_beneath": "将 MiniHUD 移到下面",
+    "minihud.label.vanilla_world_effect_mode.replace": "用 MiniHUD 替换掉"
 }

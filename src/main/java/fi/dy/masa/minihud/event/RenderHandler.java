@@ -8,6 +8,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import fi.dy.masa.malilib.MaLiLib;
+import fi.dy.masa.minihud.MiniHUD;
 import fi.dy.masa.minihud.Reference;
 import fi.dy.masa.minihud.info.InfoLine;
 
@@ -161,7 +162,7 @@ public class RenderHandler implements IRenderer
             }
 
             int x = Configs.Generic.TEXT_POS_X.getIntegerValue();
-            int y = Configs.Generic.TEXT_POS_Y.getIntegerValue();
+            int y = Configs.Generic.TEXT_POS_Y.getIntegerValue() + MiniHUD.deltaPosY;
             int textColor = Configs.Colors.TEXT_COLOR.getIntegerValue();
             int bgColor = Configs.Colors.TEXT_BACKGROUND_COLOR.getIntegerValue();
             HudAlignment alignment = (HudAlignment) Configs.Generic.HUD_ALIGNMENT.getOptionListValue();
